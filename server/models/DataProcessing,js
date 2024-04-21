@@ -1,0 +1,27 @@
+const mongoose = require("mongoose");
+
+const dataProcessingActivitySchema = new mongoose.Schema({
+  dataFiduciaryID: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+  },
+  dataCategory: {
+    type: String,
+    required: true,
+  },
+  processingDetails: {
+    type: String,
+    required: true,
+  },
+  dataStorageLocation: {
+    type: String,
+    required: true,
+  },
+});
+
+const DataProcessingModel = mongoose.model(
+  "DataProcessing",
+  dataProcessingActivitySchema
+);
+
+module.exports = DataProcessingModel;
